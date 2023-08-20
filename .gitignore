@@ -1,0 +1,7 @@
+out/*
+dumps/*
+!dumps/schema.sql
+dataset/*
+venv
+input/*
+*.pyc

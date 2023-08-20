@@ -1,0 +1,17 @@
+version: "3"
+services:
+  music-db:
+    container_name: music-db
+    image: postgres:15.3-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: music
+    volumes:
+      # - ./dumps/full_dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
